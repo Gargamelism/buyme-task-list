@@ -1,0 +1,9 @@
+<div class='header'>
+  <h3><strong>משימות</strong></h3>
+  <button class='add-task' {{action 'toggleModal'}}>
+    <span class='circle'>+</span>
+  </button>
+</div>
+{{#if isShowingModal}}
+  {{add-task-form model=model onClose=(action 'toggleModal')}}
+{{/if}}

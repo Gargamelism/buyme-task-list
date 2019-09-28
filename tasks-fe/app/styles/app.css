@@ -1,0 +1,109 @@
+body {
+  font-family: 'calibri';
+  direction: rtl;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  max-width: 340px;
+  padding: 1em;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom,rgb(235, 208, 139) 0%, rgb(209, 127, 27) 100%);
+  width: 100%;
+  height: 50px;
+}
+
+.header h3 {
+  display: flex;
+  margin: auto 1.5em;
+}
+
+.add-task {
+  border-radius: 5px;
+  margin-left: 1.5em;
+  height: 35px;
+  width: 35px;
+  background: linear-gradient(to bottom,rgb(250, 248, 254) 0%, rgb(176, 167, 144) 100%);
+  padding: 1px;
+}
+
+.circle {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 75%;
+  width: 75%;
+}
+
+.plus {
+  background:
+    linear-gradient(#000,#000),
+    linear-gradient(#000,#000);
+  background-position:center;
+  background-size: 50% 2px,2px 50%; /*thickness = 2px, length = 50% (25px)*/
+  background-repeat:no-repeat;
+}
+
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-content {
+  width: min-content;
+  height: max-content;
+  border: 2px solid black;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.tasks-container {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 450px;
+  background-color: rgb(229, 229, 229);
+}
+
+.task-cell {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  background-color: rgb(243, 246, 227);
+}
+
+.checkbox-custom {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  top: 0px;
+  left: 0px;
+  width: 26px;
+  height: 26px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 30%;
+  border: 1px solid rgb(145, 146, 138);
+  margin-left: 10px;
+}
+
+input:checked ~ .custom-checkbox {
+  background-color: rgb(145, 146, 138);
+}
+
+.complete-task + #title {
+  margin: 0;
+}

@@ -1,0 +1,8 @@
+{{#bs-modal keyboard=true onHidden=(action 'close') class='modal'}}
+  <form>
+    <label>הוסף משימה:</label>
+      {{input value=title type='text' size=50 width='100%' autofocus=true}}
+    <button {{action 'submit'}} class='btn'>הוסף</button>
+    <button {{action 'close'}} class='btn'>בטל</button>
+  </form>
+{{/bs-modal}}

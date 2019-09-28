@@ -1,0 +1,8 @@
+<div class='container'>
+  {{tasks-header model=model}}
+  <div class='tasks-container'>
+    {{#each model as |task|}}
+      {{task-cell task=task model=model}}
+    {{/each}}
+  </div>
+</div>

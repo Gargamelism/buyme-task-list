@@ -1,0 +1,22 @@
+[0;1;32m●[0m apache2.service - The Apache HTTP Server
+   Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+  Drop-In: /lib/systemd/system/apache2.service.d
+           └─apache2-systemd.conf
+   Active: [0;1;32mactive (running)[0m since Tue 2019-09-24 11:10:08 IDT; 40s ago
+  Process: 5569 ExecStop=/usr/sbin/apachectl stop (code=exited, status=0/SUCCESS)
+  Process: 3603 ExecReload=/usr/sbin/apachectl graceful (code=exited, status=0/SUCCESS)
+  Process: 5574 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+ Main PID: 5578 (apache2)
+    Tasks: 7 (limit: 2307)
+   CGroup: /system.slice/apache2.service
+           ├─5578 /usr/sbin/apache2 -k start
+           ├─5579 /usr/sbin/apache2 -k start
+           ├─5580 /usr/sbin/apache2 -k start
+           ├─5581 /usr/sbin/apache2 -k start
+           ├─5582 /usr/sbin/apache2 -k start
+           ├─5583 /usr/sbin/apache2 -k start
+           └─5584 /usr/sbin/apache2 -k start
+
+Sep 24 11:10:08 gargamel-VirtualBox systemd[1]: Starting The Apache HTTP Server...
+Sep 24 11:10:08 gargamel-VirtualBox apachectl[5574]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Sep 24 11:10:08 gargamel-VirtualBox systemd[1]: Started The Apache HTTP Server.
