@@ -26,7 +26,7 @@ class TaskController extends Controller {
     public function show($id) {
         $task = Task::findOrFail($id);
 
-        return response()->json($task, self::OK);
+        return response()->json(['task' => $task], self::OK);
     }
 
     public function store(Request $request) {
@@ -44,9 +44,9 @@ class TaskController extends Controller {
 
     public function update(Request $request, $id) {
         $task = Task::findOrFail($id);
-        $task->update($request->all());
+        $task->update($request->input('task'));
 
-        return response()->json($task, self::OK);
+        return response()->json(['task' => $task], self::OK);
     }
 
     public function delete(Request $request, $id) {

@@ -71,6 +71,10 @@ body {
   background-color: rgb(229, 229, 229);
 }
 
+.tasks-container ol {
+  padding:0; 
+}
+
 .task-cell {
   display: inline-flex;
   justify-items: center;
@@ -104,6 +108,12 @@ input:checked ~ .custom-checkbox {
   background-color: rgb(145, 146, 138);
 }
 
-.complete-task + #title {
-  margin: 0;
+.task-title {
+  font-size: 22px; 
+  margin-right: 25px;
+}
+
+.completed-task {
+  color: rgb(145, 146, 138);
+  text-decoration: line-through;
 }
