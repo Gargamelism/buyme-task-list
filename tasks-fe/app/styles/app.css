@@ -70,6 +70,7 @@ body {
   overflow-x: hidden;
   height: 450px;
   background-color: rgb(229, 229, 229);
+  position: relative;
 }
 
 .tasks-container ol {
@@ -112,7 +113,7 @@ input:checked ~ .custom-checkbox {
   font-size: 22px;
   font-weight: bold;
   flex: 1;
-  margin-right: 30px;
+  margin-right: 35px;
 }
 
 .completed-task {
@@ -125,4 +126,15 @@ input:checked ~ .custom-checkbox {
   border: none;
   font-size: 20px;
   font-weight: bold;
+}
+
+.tasks-summary {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  font-weight: bold;
+  position: sticky;
+  bottom: 2px;
 }

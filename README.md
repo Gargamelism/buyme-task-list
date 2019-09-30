@@ -22,7 +22,4 @@
 * Mark tasks as completed.
 * Delete tasks.
 * Interchanging tasks colors.
-
-### Missing
-
 * Tasks summary.

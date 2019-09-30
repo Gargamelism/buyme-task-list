@@ -18,13 +18,16 @@ class TaskController extends Controller {
     const BAD_REQUEST = 400;
 
     public function index() {
-        $tasks = Task::all();
+        $tasks = Task::where('is_deleted', 0)->get();
 
         return response()->json(['tasks' => $tasks] , self::OK);
     }
 
     public function show($id) {
-        $task = Task::findOrFail($id);
+        $task = Task::where('is_deleted', 0)
+                    ->where('id', $id)
+                    ->get()
+                    ->first();
 
         return response()->json(['task' => $task], self::OK);
     }
@@ -36,7 +39,7 @@ class TaskController extends Controller {
         
         if($title) {
             $task = Task::create($request->input('task'));
-            $response = response()->json($task, self::CREATED);
+            $response = response()->json(['task' => $task], self::CREATED);
         }
         
         return $response;
