@@ -51,7 +51,8 @@ class TaskController extends Controller {
 
     public function delete(Request $request, $id) {
         $task = Task::findOrFail($id);
-        $task->delete();
+        $task['is_deleted'] = true;
+        $task->save();
 
         return response()->json(null, self::NO_CONTENT);
     }

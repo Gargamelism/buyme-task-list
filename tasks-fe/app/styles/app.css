@@ -32,23 +32,24 @@ body {
   width: 35px;
   background: linear-gradient(to bottom,rgb(250, 248, 254) 0%, rgb(176, 167, 144) 100%);
   padding: 1px;
+  justify-items: center;
 }
 
 .circle {
   display: inline-block;
   border: 1px solid black;
   border-radius: 50%;
-  height: 75%;
-  width: 75%;
+  height: 100%;
+  width: 100%;
 }
 
 .plus {
-  background:
-    linear-gradient(#000,#000),
-    linear-gradient(#000,#000);
-  background-position:center;
-  background-size: 50% 2px,2px 50%; /*thickness = 2px, length = 50% (25px)*/
-  background-repeat:no-repeat;
+  font-weight: bold;
+  font-size: 30px;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 25px;
 }
 
 .modal-dialog {
@@ -77,7 +78,6 @@ body {
 
 .task-cell {
   display: inline-flex;
-  justify-items: center;
   align-items: center;
   justify-content: flex-start;
   height: 40px;
@@ -101,7 +101,7 @@ body {
   background-color: rgb(240, 240, 240);
   border-radius: 30%;
   border: 1px solid rgb(145, 146, 138);
-  margin-left: 10px;
+  margin-right: 5px;
 }
 
 input:checked ~ .custom-checkbox {
@@ -109,11 +109,20 @@ input:checked ~ .custom-checkbox {
 }
 
 .task-title {
-  font-size: 22px; 
-  margin-right: 25px;
+  font-size: 22px;
+  font-weight: bold;
+  flex: 1;
+  margin-right: 30px;
 }
 
 .completed-task {
   color: rgb(145, 146, 138);
   text-decoration: line-through;
+}
+
+.delete-task {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
 }
