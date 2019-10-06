@@ -1,0 +1,140 @@
+body {
+  font-family: 'calibri';
+  direction: rtl;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  max-width: 340px;
+  padding: 1em;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom,rgb(235, 208, 139) 0%, rgb(209, 127, 27) 100%);
+  width: 100%;
+  height: 50px;
+}
+
+.header h3 {
+  display: flex;
+  margin: auto 1.5em;
+}
+
+.add-task {
+  border-radius: 5px;
+  margin-left: 1.5em;
+  height: 35px;
+  width: 35px;
+  background: linear-gradient(to bottom,rgb(250, 248, 254) 0%, rgb(176, 167, 144) 100%);
+  padding: 1px;
+  justify-items: center;
+}
+
+.circle {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.plus {
+  font-weight: bold;
+  font-size: 30px;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 25px;
+}
+
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-content {
+  width: min-content;
+  height: max-content;
+  border: 2px solid black;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.tasks-container {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 450px;
+  background-color: rgb(229, 229, 229);
+  position: relative;
+}
+
+.tasks-container ol {
+  padding:0; 
+}
+
+.task-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  background-color: rgb(243, 246, 227);
+}
+
+.checkbox-custom {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  top: 0px;
+  left: 0px;
+  width: 26px;
+  height: 26px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 30%;
+  border: 1px solid rgb(145, 146, 138);
+  margin-right: 5px;
+}
+
+input:checked ~ .custom-checkbox {
+  background-color: rgb(145, 146, 138);
+}
+
+.task-title {
+  font-size: 22px;
+  font-weight: bold;
+  flex: 1;
+  margin-right: 35px;
+}
+
+.completed-task {
+  color: rgb(145, 146, 138);
+  text-decoration: line-through;
+}
+
+.delete-task {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.tasks-summary {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  font-weight: bold;
+  position: sticky;
+  bottom: 2px;
+}

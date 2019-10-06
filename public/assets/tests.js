@@ -15,9 +15,39 @@ define('tasks-fe/tests/app.lint-test', [], function () {
     assert.ok(true, 'app.js should pass ESLint\n\n');
   });
 
+  QUnit.test('components/add-task-form.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/add-task-form.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/complete-task.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/complete-task.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/delete-task.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'components/delete-task.js should pass ESLint\n\n2:8 - \'task\' is defined but never used. (no-unused-vars)');
+  });
+
+  QUnit.test('components/task-cell.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/task-cell.js should pass ESLint\n\n');
+  });
+
   QUnit.test('components/tasks-header.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'components/tasks-header.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/tasks-summary.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/tasks-summary.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/tasks.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/tasks.js should pass ESLint\n\n');
   });
 
   QUnit.test('controllers/task.js', function (assert) {
@@ -110,6 +140,93 @@ define('tasks-fe/tests/helpers/start-app', ['exports', 'tasks-fe/app', 'tasks-fe
     });
   }
 });
+define('tasks-fe/tests/integration/components/complete-task-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleForComponent)('complete-task', 'Integration | Component | complete task', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      "id": "do9LtNUn",
+      "block": "{\"symbols\":[],\"statements\":[[1,[18,\"complete-task\"],false]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      "id": "2NT68nSj",
+      "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"complete-task\",null,null,{\"statements\":[[0,\"      template block text\\n\"]],\"parameters\":[]},null],[0,\"  \"]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('tasks-fe/tests/integration/components/delete-task-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleForComponent)('delete-task', 'Integration | Component | delete task', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      "id": "bK7qyJUp",
+      "block": "{\"symbols\":[],\"statements\":[[1,[18,\"delete-task\"],false]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      "id": "jCmOMmhh",
+      "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"delete-task\",null,null,{\"statements\":[[0,\"      template block text\\n\"]],\"parameters\":[]},null],[0,\"  \"]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('tasks-fe/tests/integration/components/task-cell-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleForComponent)('task-cell', 'Integration | Component | task cell', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      "id": "xUcQWU0L",
+      "block": "{\"symbols\":[],\"statements\":[[1,[18,\"task-cell\"],false]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      "id": "+Rs3fUU1",
+      "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"task-cell\",null,null,{\"statements\":[[0,\"      template block text\\n\"]],\"parameters\":[]},null],[0,\"  \"]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
 define('tasks-fe/tests/integration/components/tasks-header-test', ['ember-qunit'], function (_emberQunit) {
   'use strict';
 
@@ -133,6 +250,35 @@ define('tasks-fe/tests/integration/components/tasks-header-test', ['ember-qunit'
     this.render(Ember.HTMLBars.template({
       "id": "LSIl0VTx",
       "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"tasks-header\",null,null,{\"statements\":[[0,\"      template block text\\n\"]],\"parameters\":[]},null],[0,\"  \"]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('tasks-fe/tests/integration/components/tasks-summary-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleForComponent)('tasks-summary', 'Integration | Component | tasks summary', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      "id": "rrVkSVKz",
+      "block": "{\"symbols\":[],\"statements\":[[1,[18,\"tasks-summary\"],false]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      "id": "Ht7kkKAP",
+      "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"tasks-summary\",null,null,{\"statements\":[[0,\"      template block text\\n\"]],\"parameters\":[]},null],[0,\"  \"]],\"hasEval\":false}",
       "meta": {}
     }));
 
@@ -166,9 +312,29 @@ define('tasks-fe/tests/tests.lint-test', [], function () {
     assert.ok(true, 'helpers/start-app.js should pass ESLint\n\n');
   });
 
+  QUnit.test('integration/components/complete-task-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/complete-task-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('integration/components/delete-task-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/delete-task-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('integration/components/task-cell-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/task-cell-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('integration/components/tasks-header-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/components/tasks-header-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('integration/components/tasks-summary-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/tasks-summary-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('test-helper.js', function (assert) {
@@ -199,11 +365,6 @@ define('tasks-fe/tests/tests.lint-test', [], function () {
   QUnit.test('unit/routes/tasks-list-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/tasks-list-test.js should pass ESLint\n\n');
-  });
-
-  QUnit.test('unit/serializers/task-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/serializers/task-test.js should pass ESLint\n\n');
   });
 });
 define('tasks-fe/tests/unit/adapters/application-test', ['ember-qunit'], function (_emberQunit) {
@@ -272,23 +433,6 @@ define('tasks-fe/tests/unit/routes/tasks-list-test', ['ember-qunit'], function (
   (0, _emberQunit.test)('it exists', function (assert) {
     var route = this.subject();
     assert.ok(route);
-  });
-});
-define('tasks-fe/tests/unit/serializers/task-test', ['ember-qunit'], function (_emberQunit) {
-  'use strict';
-
-  (0, _emberQunit.moduleForModel)('task', 'Unit | Serializer | task', {
-    // Specify the other units that are required for this test.
-    needs: ['serializer:task']
-  });
-
-  // Replace this with your real tests.
-  (0, _emberQunit.test)('it serializes records', function (assert) {
-    var record = this.subject();
-
-    var serializedRecord = record.serialize();
-
-    assert.ok(serializedRecord);
   });
 });
 require('tasks-fe/tests/test-helper');
